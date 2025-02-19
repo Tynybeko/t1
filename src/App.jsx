@@ -29,6 +29,7 @@ function App() {
           <Card isTrue={!item.name.startsWith('A')} name={item.name} />
         ))
       }
+      <h1>GIT PULL NEW </h1>
       <button className='py-2 cursor-pointer px-6 bg-blue-300 hover:bg-blue-700 duration-300 text-white rounded-lg'>OK</button>
     </div>
   )
