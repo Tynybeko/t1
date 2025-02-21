@@ -1,0 +1,42 @@
+.contain {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.banner {
+    background-image: url(./assets/background.png);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    height: 1000px;
+}
+
+.home_content_container {
+    max-width: 1076px;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 1400px) {
+    .home_content_container {
+        max-width: 700px;
+    }
+
+}
+
+.pre_title {
+    position: relative;
+    display: flex;
+    text-transform: uppercase;
+    font-size: 20px;
+    align-items: center;
+}
+
+.pre_title::after {
+    margin-left: 15px;
+    content: '';
+    height: 3px;
+    width: 60px;
+    background-color: var(--accent-color);
+    display: block;
+}
