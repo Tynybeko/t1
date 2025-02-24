@@ -1,24 +1,21 @@
-import React, { useState } from 'react'
-import Button from './UI/Button'
+import React from 'react'
+import Button from '../UI/Button'
 
-export default function LeftMainBar(props) {
-    const [isOpen, setOpen] = useState(false)
-
-
-
-    const handleClick = () => {
-        setOpen(prev => !prev)
-    }
-
-
-
-
-
+export default function ReserveModal({ onClose }) {
 
     return (
-        <div className={`banner_menu hidden ${isOpen ? 'active' : ''} lg:flex h-full bg-black absolute  w-full top-0 py-3.5 px-5  flex-col justify-between`} >
-
-            <div className='flex flex-col items-center gap-5'>
+        <div className='w-full h-full  absolute z-50 flex items-center justify-center bg-black/70'>
+            <div className='bg-black reserveAnimation relative p-20 flex flex-col items-center gap-8'>
+                <button onClick={onClose} className='cursor-pointer absolute top-7 right-7'>
+                    <svg
+                        className="feather feather-x text-[var(--accent-color)]"
+                        fill="none" height="60" stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="60" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="18" x2="6" y1="6" y2="18" />
+                        <line x1="6" x2="18" y1="6" y2="18" />
+                    </svg>
+                </button>
                 <svg className='cursor-pointer' width="80.000000" height="46.000000" viewBox="0 0 80 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <clipPath id="clip2_32">
@@ -32,86 +29,17 @@ export default function LeftMainBar(props) {
                         <path id="Vector" d="M11.07 25.3C12.95 25 14.55 24.75 15.28 24.85C15.62 25.65 15.96 26.4 16.43 26.95C16.87 27.5 17.4 27.85 18.07 27.75C19.04 27.65 20.11 27.35 21.16 27.1C21.92 26.9 22.65 26.7 23.33 26.6C22.65 26.5 21.97 26.35 21.26 26.2C20.45 26.05 19.67 25.85 18.94 25.65L18.81 25.65C18.62 25.65 18.39 25.65 18.36 25.25L18.36 25.2L18.39 25.2C19.28 24.85 20.27 24.65 21.26 24.5C21.94 24.4 22.62 24.25 23.25 24.1C22.07 23.95 20.84 23.8 19.69 23.65C19.41 23.6 19.12 23.55 18.83 23.55L18.7 23.55C18.52 23.55 18.31 23.55 18.21 23.25L18.18 23.2L18.21 23.2C19.15 22.84 20.16 22.64 21.18 22.49C21.86 22.39 22.57 22.24 23.22 22.09C22.88 22.04 22.52 21.99 22.18 21.94C20.87 21.79 19.54 21.64 18.36 21.29L18.31 21.29L18.34 21.24C18.44 20.94 18.62 20.94 18.78 20.94L18.94 20.94L20.19 20.64C21.24 20.39 22.31 20.09 23.3 19.84C22.7 19.74 22.1 19.64 21.52 19.54C21.21 19.49 20.92 19.44 20.58 19.39L19.8 19.24C18.54 18.99 17.24 18.69 16.4 19.69C16.19 19.94 16.01 20.34 15.85 20.74C15.64 21.19 15.46 21.64 15.23 21.79C14.81 21.99 14.18 21.94 13.55 21.84C13.27 21.79 12.98 21.74 12.72 21.74C12.43 21.74 11.83 21.59 11.05 21.44C8.22 20.59 2.92 19.54 0.86 21.24C0.13 21.84 -0.19 22.74 0.13 24.2C0.73 26.95 6.68 26 11.07 25.3ZM15.28 24.95C14.55 24.85 12.95 25.1 11.07 25.4C6.68 26.1 0.7 27.05 0.07 24.2C-0.27 22.69 0.07 21.74 0.83 21.09C2.92 19.39 8.22 20.44 11.07 20.99C11.86 21.14 12.46 21.29 12.74 21.29C13.01 21.29 13.29 21.34 13.58 21.39C14.21 21.49 14.81 21.54 15.23 21.34C15.44 21.24 15.62 20.79 15.83 20.34C16.01 19.94 16.17 19.54 16.4 19.29C17.26 18.29 18.57 18.59 19.85 18.84L20.64 18.99C20.92 19.04 21.26 19.09 21.58 19.14C22.26 19.24 22.93 19.39 23.64 19.44L23.93 19.49L23.67 19.59C22.59 19.89 21.45 20.19 20.3 20.49L19.04 20.79L18.88 20.79C18.75 20.79 18.6 20.79 18.49 20.99C19.67 21.34 20.97 21.49 22.28 21.64C22.73 21.69 23.14 21.74 23.59 21.79L23.85 21.84L23.59 21.89C22.86 22.09 22.07 22.24 21.29 22.39C20.3 22.59 19.28 22.74 18.36 23.1C18.44 23.3 18.62 23.3 18.78 23.3L18.91 23.3C19.2 23.35 19.49 23.4 19.77 23.4C21.03 23.6 22.33 23.75 23.59 23.9L23.85 23.95L23.59 24.05C22.86 24.25 22.1 24.4 21.34 24.55C20.37 24.75 19.41 24.9 18.52 25.25C18.57 25.55 18.75 25.5 18.91 25.5L19.04 25.5C19.8 25.65 20.58 25.85 21.37 26.05C22.15 26.2 22.96 26.4 23.72 26.5L23.72 26.6C22.96 26.7 22.1 26.95 21.24 27.15C20.19 27.4 19.12 27.7 18.15 27.8C17.47 27.9 16.92 27.55 16.48 27C15.96 26.5 15.59 25.75 15.28 24.95Z" fill="#B59571" fillOpacity="1.000000" fillRule="nonzero" />
                     </g>
                 </svg>
-
-                {
-                    isOpen ?
-                        <button onClick={handleClick} className='cursor-pointer'>
-                            <svg
-                                className="feather feather-x text-[var(--accent-color)]"
-                                fill="none" height="60" stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="60" xmlns="http://www.w3.org/2000/svg">
-                                <line x1="18" x2="6" y1="6" y2="18" />
-                                <line x1="6" x2="18" y1="6" y2="18" />
-                            </svg>
-                        </button>
-                        :
-                        <button>
-                            <svg onClick={handleClick} className='cursor-pointer' width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
-                                <defs>
-                                    <clipPath id="clip2_34">
-                                        <rect id="gg:menu-left" rx="0.000000" width="39.000000" height="39.000000" transform="translate(0.500000 0.500000)" fill="white" fillOpacity="0" />
-                                    </clipPath>
-                                </defs>
-                                <rect id="gg:menu-left" rx="0.000000" width="39.000000" height="39.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fillOpacity="0" />
-                                <g clip-path="url(#clip2_34)">
-                                    <path id="Vector" d="M3.33 9.99C3.33 9.07 4.07 8.33 4.99 8.33L18.34 8.33C18.78 8.33 19.2 8.5 19.51 8.81C19.82 9.13 20 9.55 20 9.99C20 10.43 19.82 10.85 19.51 11.16C19.2 11.47 18.78 11.65 18.34 11.65L4.99 11.65C4.55 11.65 4.12 11.47 3.81 11.16C3.5 10.85 3.33 10.43 3.33 9.99ZM3.33 20C3.33 19.08 4.07 18.34 4.99 18.34L35 18.34C35.44 18.34 35.86 18.51 36.18 18.82C36.49 19.13 36.66 19.56 36.66 20C36.66 20.43 36.49 20.86 36.18 21.17C35.86 21.48 35.44 21.65 35 21.65L4.99 21.65C4.55 21.65 4.12 21.48 3.81 21.17C3.5 20.86 3.33 20.43 3.33 20ZM4.99 28.35C4.55 28.35 4.12 28.52 3.81 28.83C3.5 29.14 3.33 29.56 3.33 30C3.33 30.44 3.5 30.86 3.81 31.18C4.12 31.49 4.55 31.66 4.99 31.66L25 31.66C25.44 31.66 25.86 31.49 26.18 31.18C26.49 30.86 26.66 30.44 26.66 30C26.66 29.56 26.49 29.14 26.18 28.83C25.86 28.52 25.44 28.35 25 28.35L4.99 28.35Z" fill="#B59571" fillOpacity="1.000000" fill-rule="nonzero" />
-                                </g>
-                            </svg>
-                        </button>
-                }
+                <h2 className='text-2xl font-medium text-white'>Забронировать стол</h2>
+                <div className='w-full flex flex-col gap-7'>
+                    <input placeholder='Имя' className='text-white text-xl border border-white w-full py-3 px-2' type="text" />
+                    <input placeholder='Имя' className='text-white text-xl border border-white w-full py-3 px-2' type="text" />
+                    <div className='flex gap-5 w-full'>
+                        <input placeholder='Имя' className='text-white text-xl border border-white w-full py-3 px-2' type="text" />
+                        <input placeholder='Имя' className='text-white text-xl border border-white w-full py-3 px-2' type="text" />
+                    </div>
+                </div>
+                <Button title="Забронировать" variant="bg" />
             </div>
-            {
-                isOpen ? <div className={` flex items-center justify-center flex-col gap-5 h-screen`}>
-
-                    <nav className='text-white flex-col flex gap-10 items-center'>
-                        <a href="">Меню</a>
-                        <a href="">Доставка</a>
-                        <a href="">Оплата</a>
-                        <Button onClick={props.openReserveModal} title="Бронь столика" />
-                    </nav>
-                </div> : null
-            }
-            <div className={`flex items-center  ${isOpen ? '' : 'flex-col pr-5'} gap-5 duration-500 `}>
-                <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-                    <defs>
-                        <clipPath id="clip2_39">
-                            <rect id="soc-icons" rx="0.000000" width="39.000000" height="39.000000" transform="translate(0.500000 0.500000)" fill="white" fillOpacity="0" />
-                        </clipPath>
-                    </defs>
-                    <rect id="soc-icons" rx="0.000000" width="39.000000" height="39.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fillOpacity="0" />
-                    <g clip-path="url(#clip2_39)">
-                        <path id="Vector" d="M35.96 12.37C35.78 11.69 35.41 11.09 34.9 10.6C34.38 10.11 33.74 9.75 33.04 9.57C30.43 8.89 19.99 8.89 19.99 8.89C15.63 8.84 11.28 9.06 6.95 9.54C6.25 9.73 5.61 10.1 5.09 10.59C4.58 11.09 4.2 11.7 4.01 12.37C3.54 14.88 3.32 17.44 3.33 20C3.32 22.55 3.54 25.11 4.01 27.62C4.2 28.29 4.57 28.9 5.09 29.39C5.6 29.88 6.24 30.23 6.95 30.42C9.59 31.1 19.99 31.1 19.99 31.1C24.35 31.15 28.71 30.94 33.04 30.45C33.74 30.27 34.38 29.92 34.9 29.42C35.41 28.93 35.78 28.32 35.96 27.66C36.44 25.14 36.67 22.59 36.66 20.03C36.69 17.46 36.46 14.89 35.96 12.37L35.96 12.37ZM16.67 24.75L16.67 15.24L25.36 20L16.67 24.75Z" fill="#B59571" fill-opacity="1.000000" fill-rule="nonzero" />
-                    </g>
-                </svg>
-                <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-                    <defs>
-                        <clipPath id="clip2_39">
-                            <rect id="soc-icons" rx="0.000000" width="39.000000" height="39.000000" transform="translate(0.500000 0.500000)" fill="white" fillOpacity="0" />
-                        </clipPath>
-                    </defs>
-                    <rect id="soc-icons" rx="0.000000" width="39.000000" height="39.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fillOpacity="0" />
-                    <g clip-path="url(#clip2_39)">
-                        <path id="Vector" d="M35.96 12.37C35.78 11.69 35.41 11.09 34.9 10.6C34.38 10.11 33.74 9.75 33.04 9.57C30.43 8.89 19.99 8.89 19.99 8.89C15.63 8.84 11.28 9.06 6.95 9.54C6.25 9.73 5.61 10.1 5.09 10.59C4.58 11.09 4.2 11.7 4.01 12.37C3.54 14.88 3.32 17.44 3.33 20C3.32 22.55 3.54 25.11 4.01 27.62C4.2 28.29 4.57 28.9 5.09 29.39C5.6 29.88 6.24 30.23 6.95 30.42C9.59 31.1 19.99 31.1 19.99 31.1C24.35 31.15 28.71 30.94 33.04 30.45C33.74 30.27 34.38 29.92 34.9 29.42C35.41 28.93 35.78 28.32 35.96 27.66C36.44 25.14 36.67 22.59 36.66 20.03C36.69 17.46 36.46 14.89 35.96 12.37L35.96 12.37ZM16.67 24.75L16.67 15.24L25.36 20L16.67 24.75Z" fill="#B59571" fill-opacity="1.000000" fill-rule="nonzero" />
-                    </g>
-                </svg>
-                <svg width="40.000000" height="40.000000" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-                    <defs>
-                        <clipPath id="clip2_39">
-                            <rect id="soc-icons" rx="0.000000" width="39.000000" height="39.000000" transform="translate(0.500000 0.500000)" fill="white" fillOpacity="0" />
-                        </clipPath>
-                    </defs>
-                    <rect id="soc-icons" rx="0.000000" width="39.000000" height="39.000000" transform="translate(0.500000 0.500000)" fill="#FFFFFF" fillOpacity="0" />
-                    <g clip-path="url(#clip2_39)">
-                        <path id="Vector" d="M35.96 12.37C35.78 11.69 35.41 11.09 34.9 10.6C34.38 10.11 33.74 9.75 33.04 9.57C30.43 8.89 19.99 8.89 19.99 8.89C15.63 8.84 11.28 9.06 6.95 9.54C6.25 9.73 5.61 10.1 5.09 10.59C4.58 11.09 4.2 11.7 4.01 12.37C3.54 14.88 3.32 17.44 3.33 20C3.32 22.55 3.54 25.11 4.01 27.62C4.2 28.29 4.57 28.9 5.09 29.39C5.6 29.88 6.24 30.23 6.95 30.42C9.59 31.1 19.99 31.1 19.99 31.1C24.35 31.15 28.71 30.94 33.04 30.45C33.74 30.27 34.38 29.92 34.9 29.42C35.41 28.93 35.78 28.32 35.96 27.66C36.44 25.14 36.67 22.59 36.66 20.03C36.69 17.46 36.46 14.89 35.96 12.37L35.96 12.37ZM16.67 24.75L16.67 15.24L25.36 20L16.67 24.75Z" fill="#B59571" fill-opacity="1.000000" fill-rule="nonzero" />
-                    </g>
-                </svg>
-
-            </div>
-
         </div>
     )
 }

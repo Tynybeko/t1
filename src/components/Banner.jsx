@@ -1,17 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from './UI/Button'
 import LeftMainBar from './LeftMainBar'
+import ReserveModal from './modals/ReserveModal'
 
 export default function Banner() {
+    const [reserveModal, setReserveModal] = useState(false)
+
+
+    const toggleReserveModal = () => {
+        setReserveModal(prev => !prev)
+    }
+
     return (
         <section className='banner'>
-            <LeftMainBar />
+            {
+                reserveModal ?
+                    <ReserveModal onClose={toggleReserveModal} />
+                    : null
+            }
+            <LeftMainBar openReserveModal={toggleReserveModal} />
             <header className='py-8 w-full justify-end flex pr-25'>
                 <nav className='text-white flex gap-10 items-center'>
                     <a href="">Меню</a>
                     <a href="">Доставка</a>
                     <a href="">Оплата</a>
-                    <Button title="Бронь столика" />
+                    <Button onClick={toggleReserveModal} title="Бронь столика" />
                 </nav>
             </header>
         </section>

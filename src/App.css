@@ -1,6 +1,7 @@
 .contain {
     max-width: 1920px;
     margin: 0 auto;
+    overflow-x: hidden;
 }
 
 .banner {
@@ -8,8 +9,41 @@
     height: 100vh;
     background-position: center;
     background-size: cover;
-    height: 1000px;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+max-height: 1092px;
 }
+
+.reserveAnimation {
+    animation: reserveModalAnimation .4s 1;
+}
+
+@keyframes reserveModalAnimation {
+    from {
+        transform: scale(0);
+
+    }
+
+    to {
+        transform: scale(1);
+
+    }
+}
+
+
+.banner_menu {
+    transform: translateX(-94%);
+    align-items: end;
+    transition: all .4s ease-in-out;
+}
+
+.banner_menu.active {
+    transform: translateX(0);
+    align-items: center;
+    padding: 70px 0;
+}
+
 
 .home_content_container {
     max-width: 1076px;
