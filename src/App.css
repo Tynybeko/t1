@@ -12,7 +12,7 @@
     overflow-x: hidden;
     position: relative;
     z-index: 1;
-max-height: 1092px;
+    max-height: 1092px;
 }
 
 .reserveAnimation {
@@ -33,7 +33,7 @@ max-height: 1092px;
 
 
 .banner_menu {
-    transform: translateX(-94%);
+    transform: translateX(calc(120px - 100%));
     align-items: end;
     transition: all .4s ease-in-out;
 }
