@@ -51,6 +51,9 @@ Morbi pellentesque enim massa laoreet vel id. Lectus ac, facilisis neque turpis.
           </MainContent>
         </div>
       </section>
+      <footer>
+
+      </footer>
     </div>
   )
 }
