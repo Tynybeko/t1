@@ -1,8 +1,8 @@
-import './App.css'
-import Banner from './components/Banner'
-import MainContent from './components/MainContent'
-import MainImage from './components/MainImage'
-import Button from './components/UI/Button'
+import '.././App.css'
+import Banner from '../components/Banner'
+import MainContent from '../components/MainContent'
+import MainImage from '../components/MainImage'
+import Button from '../components/UI/Button'
 
 
 
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className='contain'>
-      <Banner />
+     
       <section className='py-25'>
         <div className='home_content_container flex flex-col gap-[150px]'>
           <MainContent
